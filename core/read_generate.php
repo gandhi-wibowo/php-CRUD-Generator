@@ -1,6 +1,4 @@
 <?php
-require_once 'function.php';
-
 function gen_read($table){
   $nopf = NoPrimaryField($table);
   $pf   = PrimaryField($table);
@@ -8,6 +6,7 @@ $string ="
 <?php
 require_once 'func.php';
 ?>
+<a href='create.php'>Tambah</a>
 <table border=\"1\">
   <tr>
   <th>No</th>

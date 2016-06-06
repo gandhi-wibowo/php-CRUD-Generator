@@ -45,15 +45,15 @@ foreach($nopf as $fieldName){
 $string .="
   \$query = \"INSERT INTO `$table` (";
 foreach($fields as $fieldName){
-  $string .="`".$fieldName['column_name']."`, \n\t\t";
+  $string .="`".$fieldName['column_name']."`,";
 }
-$string .=" )
+$string .=")
 VALUES (NULL,";
 foreach($nopf as $fieldName){
-  $string .="`\$".$fieldName['column_name']."`, \n\t\t";
+  $string .="'\$".$fieldName['column_name']."',";
 }
 $string .=")\";
-\$exe = mysqli_query(Connect(),\$query);
+mysqli_query(Connect(),\$query);
 }";
 $string .="
 function Update(\$id){
@@ -93,5 +93,9 @@ else if(isset(\$_POST['delete'])){
 
 mkdir("../".$table);
 createFile($string, "../".$table."/func.php");
+$str=implode("", file("../".$table."/func.php"));
+$fo=fopen("../".$table."/func.php",'wb');
+$str=str_replace(",)",")",$str);
+fwrite($fo,$str,strlen($str));
 }
 ?>
