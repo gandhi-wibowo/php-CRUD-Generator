@@ -64,10 +64,10 @@ foreach($nopf as $fieldName){
 }
 $string .="
   \$query = \"UPDATE `$table` SET ";
-foreach($fields as $fieldName){
-  $string .="`".$fieldName['column_name']."` = '\$".$fieldName['column_name']."', \n\t\t";
+foreach($nopf as $fieldName){
+  $string .="`".$fieldName['column_name']."` = '\$".$fieldName['column_name']."',";
 }
-$string .=" WHERE  `$pf` =  '\$id'";
+$string .="WHERE  `$pf` =  '\$id'";
 $string .="\";
 \$exe = mysqli_query(Connect(),\$query);
 }";
@@ -93,9 +93,7 @@ else if(isset(\$_POST['delete'])){
 
 mkdir("../".$table);
 createFile($string, "../".$table."/func.php");
-$str=implode("", file("../".$table."/func.php"));
-$fo=fopen("../".$table."/func.php",'wb');
-$str=str_replace(",)",")",$str);
-fwrite($fo,$str,strlen($str));
+Replace($table,"func",",)",")");
+Replace($table,"func",",WHERE"," WHERE");
 }
 ?>

@@ -44,4 +44,11 @@ function createFile($string, $path)
     return $path;
 }
 
+function Replace($table,$nm_file,$car,$car_rep){
+  $str=implode("", file("../".$table."/".$nm_file.".php"));
+  $fo=fopen("../".$table."/".$nm_file.".php",'wb');
+  $str=str_replace($car,$car_rep,$str);
+  fwrite($fo,$str,strlen($str));
+}
+
  ?>

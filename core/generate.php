@@ -16,6 +16,9 @@ if(isset($_POST['generate'])){
 
     require_once 'create_generate.php';
     gen_create($table);
+
+    require_once 'edit_generate.php';
+    gen_edit($table);
   }
   else{
     echo "pilih salah satu table";

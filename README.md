@@ -11,10 +11,7 @@ d. akan muncul folder baru sesuai nama table pada folder php-Crud-Generator
 
 Note :
 
-1. Query update belum fix
-2. Tampilan masih polos
-3. 
-4. form edit belum
+1. Tampilan masih polos 
 
 
 
