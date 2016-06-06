@@ -1,4 +1,0 @@
-1. buat function : baca semua, baca satu, insert, update, delete | OK
-2. buat Create
-3. buat Read + Delete  | OK
-4. buat Update

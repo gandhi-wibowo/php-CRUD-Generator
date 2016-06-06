@@ -9,11 +9,12 @@ c. pilih tabel, dan tekan generate
 d. akan muncul folder baru sesuai nama table pada folder php-Crud-Generator
 ```
 
-Note :
 
-1. Tampilan masih polos 
+## Cooming Soon
 
-
+1. Bootsrap template
+2. Delete manual Config
+3. Add info or notif about proses
 
 
 > written with <3 by Me Gandhi Wibowo
