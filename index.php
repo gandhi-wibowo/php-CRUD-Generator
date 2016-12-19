@@ -27,6 +27,13 @@ require_once 'core/function.php';
 
         </td>
       </tr>
+      <tr>
+        <td>
+          <form action="core/generate.php" method="post">
+            <input type="submit" name="all" value="Generate All">
+          </form>
+        </td>
+      </tr>
     </table>
   </body>
 </html>

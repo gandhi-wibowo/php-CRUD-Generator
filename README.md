@@ -16,5 +16,9 @@ d. akan muncul folder baru sesuai nama table pada folder php-Crud-Generator
 2. Delete manual Config
 3. Add info or notif about proses
 
+## Update
+
+1. Adding Generate All
+
 
 > written with <3 by Me Gandhi Wibowo

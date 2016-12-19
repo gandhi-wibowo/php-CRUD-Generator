@@ -4,7 +4,7 @@ date_default_timezone_set('Asia/Jakarta');
 define ("HOST","localhost");
 define ("DB_USER","root");
 define ("DB_PASSWORD","jakarta");
-define ("DB_NAME","bioskop88");
+define ("DB_NAME","information_schema");
 define ("BASE_URL","");
 
 function Connect(){
