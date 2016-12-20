@@ -1,12 +1,24 @@
 <?php
 require_once 'function.php';
-$hasil = array();
-if(isset($_POST['generate'])){
+
+if(isset($_POST['genConf'])){
+  require_once 'conn_generate.php';
+  $host = $_POST['host'];
+  $dbUser = $_POST['dbuser'];
+  $dbName = $_POST['dbname'];
+  $dbPassword = $_POST['dbpwd'];
+  if(!empty($host) || !empty($dbUser) || !empty($dbName) || !empty($dbPassword)){
+    gen_conn($host,$dbUser,$dbName,$dbPassword);
+    header("Location: ../");
+  }
+  else{
+    header("Location: ../");
+  }
+
+}
+else if(isset($_POST['generate'])){
   if($_POST['table'] != NULL){
     $table = $_POST['table'];
-
-    require_once 'conn_generate.php';
-    gen_conn();
 
     require_once 'generate_function.php';
     gen_func($table);
@@ -31,8 +43,6 @@ else if(isset($_POST['all'])){
   $Table = Table();
   foreach ($Table as $key) {
     $table = $key['table_name'];
-    require_once 'conn_generate.php';
-    gen_conn();
 
     require_once 'generate_function.php';
     gen_func($table);

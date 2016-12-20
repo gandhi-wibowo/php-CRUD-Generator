@@ -1,5 +1,10 @@
 <?php
-require_once 'conn.php';
+if(is_file("config/conn.php")){
+  require_once "config/conn.php";
+}
+else if(is_file("../config/conn.php")){
+  require_once "../config/conn.php";
+}
 
 function Table(){
   $query = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '".DB_NAME."'";

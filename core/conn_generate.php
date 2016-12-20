@@ -1,20 +1,20 @@
 <?php
-function gen_conn(){
+function gen_conn($host,$dbUser,$dbName,$dbPassword){
 $string .="
 <?php
 error_reporting(E_ALL & ~E_NOTICE);
 date_default_timezone_set('Asia/Jakarta');
-define (\"HOST\",\"localhost\");
-define (\"DB_USER\",\"root\");
-define (\"DB_PASSWORD\",\"jakarta\");
-define (\"DB_NAME\",\"information_schema\");
+define (\"HOST\",\"$host\");
+define (\"DB_USER\",\"$dbUser\");
+define (\"DB_PASSWORD\",\"$dbPassword\");
+define (\"DB_NAME\",\"$dbName\");
 
 function Connect(){
     \$connect = mysqli_connect(HOST, DB_USER, DB_PASSWORD,DB_NAME);
     if(\$connect){
         return \$connect;
     } else {
-        die('Unable to connect to '.HOST);
+      return FALSE;
     }
 }
 ?>
