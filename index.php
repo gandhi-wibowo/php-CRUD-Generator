@@ -146,6 +146,12 @@ else{
                   </div>
                 </div>
                 <div class="form-group">
+                  <label class="control-label col-sm-4" for="baseurl">Link Project ini</label>
+                  <div class="col-sm-8">
+                    <input type="text" name='baseurl' class="form-control" id="baseurl" placeholder="localhost/php-CRUD-Generator">
+                  </div>
+                </div>
+                <div class="form-group">
                   <div class="col-sm-4"></div>
                   <div class="col-sm-4">
                     <button type="submit" name="genConf" class="btn btn-warning">Generate Config File</button>

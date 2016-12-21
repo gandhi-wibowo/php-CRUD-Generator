@@ -7,8 +7,9 @@ if(isset($_POST['genConf'])){
   $dbUser = $_POST['dbuser'];
   $dbName = $_POST['dbname'];
   $dbPassword = $_POST['dbpwd'];
+  $urlBase = $_POST['baseurl'];
   if(!empty($host) || !empty($dbUser) || !empty($dbName) || !empty($dbPassword)){
-    gen_conn($host,$dbUser,$dbName,$dbPassword);
+    gen_conn($host,$dbUser,$dbName,$dbPassword,$urlBase);
     header("Location: ../");
   }
   else{
@@ -35,7 +36,7 @@ else if(isset($_POST['generate'])){
     header("Location: ../index.php");
   }
   else{
-    echo "pilih salah satu table";
+    header("Location: ../index.php");
   }
 
 }

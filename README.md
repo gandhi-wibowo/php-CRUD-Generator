@@ -13,14 +13,14 @@ e. daftar folder yang telah di generate akan muncul pada "Daftar folder"
 
 ## Cooming Soon
 
-1. Bootsrap template
-2. Delete manual Config
-3. Add info or notif about proses
+1. Checker for Chmod & Chown (Linux Mode)
 
 ## Update
 
 1. Adding Generate All
 2. Adding form for Create connection file from web browser (21 Des 16)
+3. Adding Bootstrap Template for Generated file
+4. Adding Notif for Generated file (Create, Edit, Delete)
 
 
 > written with <3 by Me Gandhi Wibowo

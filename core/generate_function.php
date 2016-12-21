@@ -2,6 +2,7 @@
 function gen_func($table){
 $pf = PrimaryField($table);
 $string .= "<?php
+session_start();
 require_once '../config/conn.php';
 
 function GetAll(){
@@ -53,7 +54,18 @@ foreach($nopf as $fieldName){
   $string .="'\$".$fieldName['column_name']."',";
 }
 $string .=")\";
-mysqli_query(Connect(),\$query);
+\$exe = mysqli_query(Connect(),\$query);
+  if(\$exe){
+    // kalau berhasil
+    \$_SESSION['message'] = \" Data Sudah disimpan \";
+    \$_SESSION['mType'] = \"success \";
+    header(\"Location: index.php\");
+  }
+  else{
+    \$_SESSION['message'] = \" Data Gagal disimpan \";
+    \$_SESSION['mType'] = \"danger \";
+    header(\"Location: index.php\");
+  }
 }";
 $string .="
 function Update(\$id){
@@ -70,11 +82,33 @@ foreach($nopf as $fieldName){
 $string .="WHERE  `$pf` =  '\$id'";
 $string .="\";
 \$exe = mysqli_query(Connect(),\$query);
+  if(\$exe){
+    // kalau berhasil
+    \$_SESSION['message'] = \" Data Sudah diubah \";
+    \$_SESSION['mType'] = \"success \";
+    header(\"Location: index.php\");
+  }
+  else{
+    \$_SESSION['message'] = \" Data Gagal diubah \";
+    \$_SESSION['mType'] = \"danger \";
+    header(\"Location: index.php\");
+  }
 }";
 $string .="
 function Delete(\$id){
   \$query = \"DELETE FROM `$table` WHERE `$pf` = '\$id'\";
   \$exe = mysqli_query(Connect(),\$query);
+    if(\$exe){
+      // kalau berhasil
+      \$_SESSION['message'] = \" Data Sudah dihapus \";
+      \$_SESSION['mType'] = \"success \";
+      header(\"Location: index.php\");
+    }
+    else{
+      \$_SESSION['message'] = \" Data Gagal dihapus \";
+      \$_SESSION['mType'] = \"danger \";
+      header(\"Location: index.php\");
+    }
 }
 
 ";
