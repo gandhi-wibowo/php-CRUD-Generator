@@ -3,10 +3,13 @@
 ## How to use
 
 ```
-a. letakkan php-Crud-Generator pada localhost
+a. letakkan folder php-Crud-Generator pada localhost
 b. buka localhost/php-Crud-Generator dari browser
-c. isikan dengan benar pada form "create database connection"
-d. pilih tabel, dan tekan generate atau bisa langsung menekan generate All
+c. pada form "create database connection" isikan dengan benar : hostname #biasanya localhost, 
+database name #adalah nama database yang akan di generate kan CRUD nya, database user #biasanya root,
+database password #biasanya kalau di windows di kosongkan saja, link project #copykan saja url
+yang di tampilkan pada browser. next klik tombol generate config file
+d. next pilih tabel, dan tekan generate atau bisa langsung menekan generate All
 e. daftar folder yang telah di generate akan muncul pada "Daftar folder"
 ```
 
@@ -14,6 +17,12 @@ e. daftar folder yang telah di generate akan muncul pada "Daftar folder"
 ## Cooming Soon
 
 1. Checker for Chmod & Chown (Linux Mode)
+2. Security from SQL-injection
+3. Just bootstrap table or bootstrap datatables
+4. Pagination
+5. simple form login
+6. menu generator
+7. etc
 
 ## Update
 
